@@ -1,0 +1,46 @@
+.item-a{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: solid 2px black;
+    width: 17em;
+    height: 10em;
+    padding-bottom: 5px;
+   
+    background: rgb(236, 222, 222);
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-self: center;
+    align-self: center;
+    
+
+}
+
+.container{
+    display: grid;
+    /*grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;*/
+    grid-template-columns: calc(100vh/3) 17em calc(100vh/3);
+    grid-template-rows: calc(100vh/3) 10em calc(100vh/3);
+    place-items: center;
+   /* grid-template-areas: 
+    ". . ."
+    ". formular ."
+    ". . ."; */
+}
+
+span {
+    padding-left: 3px;
+}
+h2 {
+    padding-left: 3px;
+}
+
+#button {
+    margin-left: 3px;
+    margin-top: 0.4em;
+    padding: 3px;
+}
+
+#emailbox {
+    position:relative;
+    left:2.2em;
+}

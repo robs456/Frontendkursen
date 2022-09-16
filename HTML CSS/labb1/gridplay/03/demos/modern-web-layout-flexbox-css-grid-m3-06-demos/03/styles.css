@@ -1,0 +1,46 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: arial, sans-serif;
+    font-size: 1.2em;
+    line-height: 1.4;
+}
+
+body {
+    padding: 1em;
+}	
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+.media-item-title {
+    /* grid-area: title; */
+    margin: 0;
+}
+
+.media-item-thumb {
+    /* grid-area: thumbnail; */
+}
+
+.media-item-content {
+    /* grid-area: content; */
+}
+
+.media-container {
+    display: grid;
+
+    /* grid: auto auto / 8em 1fr;
+    grid-template-areas:
+        "title title"
+        "thumbnail content";
+    gap: 1em; */
+
+    /* grid: auto 1em auto / 8em 1.5em 1fr;
+    grid-template-areas:
+        "title title title"
+        ". . ."
+        "thumbnail . content"; */
+}

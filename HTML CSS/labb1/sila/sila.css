@@ -1,0 +1,41 @@
+.container1 {
+    border: black 1px solid;
+   height: 5vh;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center; 
+    
+}
+.container2 {
+    border: black 1px solid;
+  
+    /* min-height: 100vh;  */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.item1{
+    background: #ffa;
+    width: 200px;
+    height: 200px;
+
+}
+
+/* .rsno1 {
+    justify-self: right;
+    align-self: baseline;
+} */
+
+.container3 {
+    border: black 1px solid;
+   width: 50vw;
+   height: 5vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center; 
+    
+}

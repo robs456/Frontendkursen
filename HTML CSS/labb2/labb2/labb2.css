@@ -1,0 +1,67 @@
+@import "default.css";
+
+header {
+    margin: 5px;
+    margin-bottom: 1em;
+    display: flex;
+    flex-flow: column;
+    font-size: normal;
+} 
+
+header h1{
+    font-size: x-large;
+    color: rgb(41, 1, 41);
+}
+
+.button{
+    padding: 3px;
+    margin: 2px;
+}
+form{
+    margin: 5px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+} 
+
+@media screen and (max-width:600px){
+    form{
+        font-size: small;
+        margin: 5px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    } 
+    header {
+        margin: 5px;
+        margin-bottom: 1em;
+        display: flex;
+        flex-flow: column;
+        font-size: normal;
+        place-items: center; 
+    } 
+}
+    
+@media screen and (max-width:480px){
+    form{
+        color: red;
+        font-size: small;
+        margin: 5px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    } 
+    header {
+        margin: 5px;
+        margin-bottom: 1em;
+        display: flex;
+        flex-flow: column;
+        font-size: small;
+        place-items: center; 
+    } 
+    
+    header h1{
+        font-size: Medium;
+        color: rgb(180, 37, 180);
+}
+}

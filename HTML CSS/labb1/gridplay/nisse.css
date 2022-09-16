@@ -1,0 +1,89 @@
+.container {
+    border: black 1px solid;
+    display:grid;
+    grid-template-columns: 1fr 17em 1fr ;
+    grid-template-rows: 33vh 34vh 33vh ;
+    place-items: center;
+}
+
+.item1{
+    background: #ffa;
+    /* width: 300 px;
+    height: 100px; */
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+}
+
+.item2{
+    background: #bfb;
+    /* width: 100 px;
+    height: 100px; */
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    
+}
+
+.item3{
+    background: rgb(209, 69, 69);
+    /* width: 100 px;
+    height: 100px; */
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    z-index: 1;
+}
+
+.item4{
+    background: rgb(197, 142, 230);
+    /* width: 100 px;
+    height: 100px; */
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    
+}
+
+.item5{
+    background: rgb(53, 126, 160);
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+}
+
+.formdiv{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: solid 2px black;
+    width: 17em;
+    height: 10em;
+    padding-bottom: 5px;
+    background: rgb(236, 222, 222);
+
+}
+
+span {
+    padding-left: 3px;
+}
+h2 {
+    padding-left: 3px;
+}
+
+#button {
+    margin-left: 3px;
+    margin-top: 0.4em;
+    padding: 3px;
+}
+
+#emailbox {
+    position:relative;
+    left:2.2em;
+}

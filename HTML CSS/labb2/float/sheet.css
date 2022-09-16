@@ -1,0 +1,36 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box{
+    border: 1px solid black;
+    padding: 2em;
+    width: 33.3%;
+    float: left;
+
+}
+
+.clr{
+    clear: both;
+}
+
+#section-2{
+    margin-top: 2em;
+}
+
+.main{
+    border: 1px solid black;
+    padding: 3em 1em;
+    width: 70%;
+    float: left;
+
+}
+
+aside {
+    background: #333;
+    color: #fff;
+    width: 30%;
+    float: right;
+}
