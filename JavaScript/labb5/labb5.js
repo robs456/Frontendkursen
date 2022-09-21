@@ -1,0 +1,12 @@
+const names = ['Ricky', 'Rocky', 'Marmaduke', 'Rollo', 'Greta'];
+console.log(names);
+names.pop();
+console.log(names);
+names[1] = 'James';
+console.log(names);
+names.push('Joakim');
+console.log(names);
+names.sort();
+console.log(names);
+names.forEach((element,index) => {element === 'Joakim' ? console.log(index) : false });
+names.forEach((element) => console.log(element) );
