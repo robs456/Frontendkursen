@@ -8,5 +8,7 @@ names.push('Joakim');
 console.log(names);
 names.sort();
 console.log(names);
-names.forEach((element,index) => {element === 'Joakim' ? console.log(index) : false });
+names.forEach((element,index) => {element === 'Joakim' ? console.log('index är ' + index) : false });
+names.forEach((element,index) => {element === 'Joakim' ? names.splice(index,1) : false });
+console.log(names);
 names.forEach((element) => console.log(element) );
