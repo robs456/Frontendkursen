@@ -1,9 +1,24 @@
 let names = [];
 let again = 'y';
+let input = 'defstring' 
 
 do {
-    names.push(prompt('Enter a name to add to your list: '));
+    input = prompt('Enter a name to add to your list: ');
+    if (((typeof input) !== 'string') || (/\d/.test(input))){
+        alert('Please enter valid names only!'); 
+    }
+    else{
+        names.push(input);
+    }
+    
     again = prompt('Do you want to add another name? (y/n): ');
+    
+    while (again !== 'y' && again !== 'n'){
+        alert('Please reply \'y\' or \'n\' only! Trying again.');
+       
+        again = prompt('Do you want to add another name? (y/n): ');
+    }
+
 } while ( again === 'y');
 
 console.log(names);
