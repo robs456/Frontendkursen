@@ -1,0 +1,93 @@
+function askname(xnames){
+    return xnames.push(prompt('Enter a name to add to your list: '));
+}
+
+
+while (true){
+
+    names = askname(names);
+    let again = prompt('Do you want to add another name? (y/n): ');
+    if (again === 'n') {
+     
+        break;
+
+    }
+}
+
+
+function getNames(){
+    let fnames = [];
+    console.log(fnames.push(prompt('Enter a name to add to your list: ')));
+    return fnames;
+}
+let names = getNames();
+
+console.log(names);
+
+names.push('John');
+
+console.log(names);
+
+
+function getNames(){
+    let fnames = [];
+    fnames.push([prompt('Enter a name to add to your list: ')]);
+    let ask = [prompt('Do you want to add another name? (y/n): ')];
+    if (ask == 'y') {
+        
+        getNames();
+
+    }
+    console.log(fnames)
+    return fnames;
+}
+let names = getNames();
+
+console.log(names);
+
+names.push('John');
+
+let names = ['aaa', 'bbb', 'ccc', 'ddd', 'eee' ];
+// let again = 'y';
+
+// do {
+//     names.push(prompt('Enter a name to add to your list: '));
+//     again = prompt('Do you want to add another name? (y/n): ');
+// } while ( again === 'y');
+
+console.log(names);
+
+// let nameToRemove = prompt('Enter a name to remove: ');
+
+// let posToRem = names.indexOf(nameToRemove);
+// names.splice(posToRem,1);
+
+// console.log(names);
+
+// names.pop();
+
+// alert('The last name just popped off!!!');
+
+// console.log(names);
+
+let posToChange = prompt('Enter a position (not index) to change: ');
+let newName = prompt('Enter the new name: ');
+let indToChange = (parseInt(posToChange)-1);
+names[indToChange]=newName;
+console.log(names);
+
+newName = prompt('Enter a name to add to the list: ');
+names.push(newName);
+names.sort();
+
+let posToRem = names.indexOf(newName);
+alert('The new name is in index ' + posToRem);
+
+names.splice(posToRem,1);
+alert('Also, I just removed it!');
+
+console.log(names);
+
+names.forEach((element) => console.log(element) );
+
+alert('And now I just listed all the names in the console! Enjoy!');
