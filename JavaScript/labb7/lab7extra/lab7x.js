@@ -12,8 +12,7 @@ function addTask1(){
     t1text.textContent = 'Denna paragraf är gammal och måste uppdateras.';
     t1text.setAttribute('id', 'para');
     
-    // let main = document.getElementById('main');  --Varför behövs den inte?
-
+    let main = document.getElementById('main');  
     main.appendChild(t1text);
 
     let button2 = document.createElement('button');
@@ -49,7 +48,7 @@ function addTask2(){
 
     let remButton = document.getElementById("butt3");
     remButton.parentNode.removeChild(remButton);
-    // let main = document.getElementById('main'); --- not needed???
+    let main = document.getElementById('main'); 
     main.removeChild(document.getElementById('para'));
 
     let t2text = document.createElement('p');
