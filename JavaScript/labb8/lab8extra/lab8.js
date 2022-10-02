@@ -89,7 +89,7 @@ function validation(e){
 }
 
 function enableSubmitButton(){
-    
+    // console.log(formOk)
     if (formOk ===11111){
         document.getElementById("submitButton").disabled=false;
     }
