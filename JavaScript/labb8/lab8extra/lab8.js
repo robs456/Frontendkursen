@@ -9,7 +9,7 @@ let formOk = 0;
 document.getElementById("submitButton").disabled=true;
 
 
-document.getElementById("name").addEventListener("blur", function() {
+document.getElementById("name").addEventListener("change", function() {
     if ( !(nameRegex.test(document.getElementById('name').value))){
         document.getElementById("nameerror").style.visibility = "visible";
         
@@ -21,19 +21,19 @@ document.getElementById("name").addEventListener("blur", function() {
          
 });
 
-document.getElementById("email").addEventListener("blur", function() {  
+document.getElementById("email").addEventListener("change", function() {  
     if (!(emailRegex.test(document.getElementById('email').value))){
     document.getElementById("emailerror").style.visibility = "visible";
      
     }else {
-    formOk += 5;
+    formOk += 10;
     document.getElementById("emailerror").style.visibility = "hidden";
     enableSubmitButton();
     }
                            
 });
 
-document.getElementById("password").addEventListener("blur", function() {  
+document.getElementById("password").addEventListener("change", function() {  
     if (!(passwordRegex.test(document.getElementById('password').value))){
       document.getElementById("passworderror").style.visibility = "visible";
        
@@ -46,7 +46,7 @@ document.getElementById("password").addEventListener("blur", function() {
 });
 
 
-document.getElementById("check").addEventListener("blur", function() {  
+document.getElementById("check").addEventListener("change", function() {  
     if (!document.getElementById('check').checked){
       document.getElementById("checkerror").style.visibility = "visible";
        
@@ -58,7 +58,7 @@ document.getElementById("check").addEventListener("blur", function() {
                              
 });
 
-document.getElementById("select").addEventListener("blur", function() {  
+document.getElementById("select").addEventListener("change", function() {  
     if (document.getElementById('select').value === "" ){
       document.getElementById("selecterror").style.visibility = "visible";
        
