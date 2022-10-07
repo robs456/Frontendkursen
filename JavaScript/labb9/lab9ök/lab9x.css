@@ -131,7 +131,7 @@ nav a:hover{
 
     header{
        display: grid;
-       grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr; 
+       grid-template-columns: 1fr max-content minmax(600px, 3fr) 1fr; 
 
     }
 
