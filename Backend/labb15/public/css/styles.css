@@ -1,0 +1,56 @@
+ body {
+/* background-color: rgb(215, 247, 255); */
+
+}
+
+#wrapper{
+    height: 100vh;
+}
+/*
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+} */
+h1{
+    -webkit-text-stroke: 1px white;
+  }
+
+/* .todo_item {
+
+   border-bottom: 1px solid #efefef;
+} */
+.contentbox {
+
+min-height: 50%;
+/* max-height: 80%; */
+
+}
+
+.todoRow{
+    display: flex;
+    justify-content: space-between;
+    height: 2rem;
+    border-bottom: 1px solid #efefef;
+    align-content: center;
+}
+
+.delButt{
+    border: none;
+    color: white;
+    background-color: red;
+    /* height: 1.5em; */
+    /* margin-top: 0.25em; */
+    border-radius: 50%;
+    padding: 0 .6em;
+}
+
+.form{
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputArea{
+    width: 85%;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "labb15",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": " nodemon  labb15.js --ignore data/todos.json ",
+    "start": " node labb15.js"
+  },
+  "author": "Robert S",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+  
+}
