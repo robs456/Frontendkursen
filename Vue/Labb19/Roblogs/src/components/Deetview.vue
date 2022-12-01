@@ -1,6 +1,6 @@
 <template>
     <div class=".container" >
-        <h1 class="back" @click="$emit('backClicked', false)">BACK</h1>
+        <h1 class="back" @click="goBack">BACK</h1>
        
         <div class="blogPost" >
             <h2 class="title">title</h2>
@@ -15,7 +15,12 @@
 
 <script>
       export default {
-        
+        methods: {
+            goBack(){
+                console.log('go back')
+                this.$emit('backClicked')
+            }
+        }
             }
 </script>
 

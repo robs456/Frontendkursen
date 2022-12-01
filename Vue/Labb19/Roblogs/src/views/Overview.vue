@@ -1,5 +1,6 @@
 <template>
-    <div class="containerBlog"  v-if="!postClicked" @backClicked="backFrom" :postClicked="postClicked">
+    <div class="invisibleListener" @backClicked="backFrom">jjj</div>
+    <div class="containerBlog"  v-if="!postClicked" >
         <h1>All the wisdom laid before you:</h1>
         <div class="postList">
             <div class="blogPost" @click="postClicked = true" >
@@ -30,8 +31,9 @@
             }
         },
         methods: {
-            backFrom(d){
-                this.postClicked = d
+            backFrom(){
+                console.log('am back')
+                this.postClicked = false
             }
         }
         
@@ -42,23 +44,26 @@
 .containerBlog {
   width: 100vw;
   background-color: rgb(182, 55, 55);
-   display: flex;
-  /* flex-direction: column; */
+  display: flex;
   justify-content: center;
+  flex-direction: column;
+
 }
 
 .blogPost{
   background-color: whitesmoke;
-  margin-bottom: 1.5rem;
-  /* width: 50vw; */
+  width: 50vw;
   padding: .05em 1em .05em 1em;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
   
 }
 
 .postList{
   width: 100%; 
   display: flex;
-  /* flex-direction: column; */
+  margin:  0 auto;
+  flex-direction: column;
   justify-content: center; 
    
   
@@ -68,6 +73,7 @@ h1{
     color: white;
     text-shadow: rgba(17, 17, 17, 0.719) 2px 2px 5px ;
     font-weight: bold;
+    margin: 1rem auto;
 }
 
 
