@@ -2,7 +2,7 @@
     <div class="container">
         <nav class="navbar">
             <div class="logo">
-                <P class="logotype">Roblogs</P>
+                <p class="logotype">Roblogs</P>
             </div>
             <ul class="navmenu">
                 <li class="menuItem"><RouterLink to="/">Overview</RouterLink></li>
@@ -50,6 +50,15 @@ import { RouterLink, RouterView } from 'vue-router'
 .menuItem{
     margin: 0 1em;
     font-size: large;
+    text-decoration: none;
+    
+}
 
+.menuItem a{
+    text-decoration: none;
+    color: white;
+}
+a.router-link-active{
+    color: rgb(248, 239, 221) ; 
 }
 </style>

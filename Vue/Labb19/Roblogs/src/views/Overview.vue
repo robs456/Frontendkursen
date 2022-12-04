@@ -1,24 +1,19 @@
 <template>
-    <div class="invisibleListener" @backClicked="backFrom">jjj</div>
+    
     <div class="containerBlog"  v-if="!postClicked" >
         <h1>All the wisdom laid before you:</h1>
         <div class="postList">
-            <div class="blogPost" @click="postClicked = true" >
-                <h2 class="title">title</h2>
-                <p class="blogText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsa...</p>
-                <p class="readMore">Read more</p>
+            <div class="blogPost" v-for="post in posts" @click="prepareDeets(post)" :key="post.id">
+                <h2 class="title">{{ post.title }}</h2>
+                <p class="blogText">{{ post.text.substring(0, 100) }}...</p>
+                <p class="readMore">Read more </p>
             </div>
-            <div class="blogPost" @click="postClicked = true">
-                <h2 class="title">title</h2>
-                <p class="blogText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsa...</p>
-                <p class="readMore">Read more</p>
-            </div> 
+            
         </div>
 
     </div>
-    <Deetview v-if="postClicked" />
-    <!-- <Deetview  /> -->
-    <!-- <div><h1>All the wisdom laid before you:</h1></div> -->
+    <Deetview v-if="postClicked" @backClicked="backFrom" :title="this.title" :text="this.text"/>
+    
 </template>
 
 <script>
@@ -27,23 +22,37 @@
         components: {Deetview},
         data(){
             return{
-                postClicked: false
+                postClicked: false,
+                posts: [],
+                title: [],
+                text: []
             }
         },
         methods: {
             backFrom(){
-                console.log('am back')
                 this.postClicked = false
-            }
+            },
+            prepareDeets(post){
+            
+            this.title=post.title
+            this.text=post.text
+            this.postClicked = true
+
         }
+        },
+        async mounted(){
+            const res = await fetch("http://localhost:3000/posts");
+            this.posts = await res.json();
+        },
         
-            }
+        
+        }
 </script>
 
 <style  >
 .containerBlog {
   width: 100vw;
-  background-color: rgb(182, 55, 55);
+  background-color: #aaa;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -56,7 +65,7 @@
   padding: .05em 1em .05em 1em;
   margin: 0 auto;
   margin-bottom: 1.5rem;
-  
+  overflow-wrap: anywhere;
 }
 
 .postList{
@@ -69,12 +78,6 @@
   
 }
 
-h1{
-    color: white;
-    text-shadow: rgba(17, 17, 17, 0.719) 2px 2px 5px ;
-    font-weight: bold;
-    margin: 1rem auto;
-}
 
 
 .readMore{

@@ -1,10 +1,10 @@
 <template>
-    <div class=".container" >
+    <div class="containerBlog" >
         <h1 class="back" @click="goBack">BACK</h1>
        
         <div class="blogPost" >
-            <h2 class="title">title</h2>
-            <p class="blogText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsa...</p>
+            <h2 class="title">{{ title }}</h2>
+            <p class="blogText">{{ text }}</p>
             
         </div>
        
@@ -15,9 +15,9 @@
 
 <script>
       export default {
+        props: ['title', 'text'],
         methods: {
             goBack(){
-                console.log('go back')
                 this.$emit('backClicked')
             }
         }
@@ -27,10 +27,7 @@
 <style  scoped>
 
 h1{
-    color: white;
-    text-shadow: rgba(17, 17, 17, 0.719) 2px 2px 5px ;
-    font-weight: bold;
-    cursor: pointer;
+   cursor: pointer;
 }
 
 .readMore{
@@ -38,4 +35,8 @@ h1{
     cursor: pointer;
 }
 
+.back{
+    margin: 1rem auto;
+    cursor: pointer;
+}
 </style>
