@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "The Basic",
+      "shortDesc":"Our most basic model: It's a filter! This Vietnamese style coffee filter was Handmade in Vietnam by vietnamese coffee hipsters living in the mountains of Vietnam.",
+      "longDesc": "Our most basic model: It's a filter! This Vietnamese style coffee filter was Handmade in Vietnam by vietnamese coffee hipsters living in the mountains of Vietnam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, tempora voluptate minus omnis beatae corrupti odit voluptatem tenetur perferendis adipisci fuga. Deleniti incidunt perspiciatis optio beatae cumque ratione labore inventore quo, harum recusandae reiciendis odit quos odio sunt impedit quibusdam. Et atque facere officiis facilis ad earum minus illo provident!" ,
+      "imgURL" : "../src/assets/images/small-model.jpg"
+    },
+    {
+      "id": 2,
+      "name": "The Medium",
+      "shortDesc":"Crank! It's not just a drug, it's also what you need to do to get your coffee with our medium model handmade coffee machine. Make hand made coffee with this Handmade Machine!",
+      "longDesc": "Crank! It's not just a drug, it's also what you need to do to get your coffee with our medium model handmade coffee machine. Make hand made coffee with this Handmade Machine! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, tempora voluptate minus omnis beatae corrupti odit voluptatem tenetur perferendis adipisci fuga. Deleniti incidunt perspiciatis optio beatae cumque ratione labore inventore quo, harum recusandae reiciendis odit quos odio sunt impedit quibusdam. Et atque facere officiis facilis ad earum minus illo provident!" ,
+      "imgURL" : "../src/assets/images/medium-model.jpg"
+    },
+    {
+      "id": 3,
+      "name": "The Pro",
+      "shortDesc":"The biggest bestest Handmade Coffee Machine for when you Absolutely, Positively have to make coffee for every MF:er in the Room!",
+      "longDesc": "The biggest bestest Handmade Coffee Machine for when you Absolutely, Positively have to make coffee for every MF:er in the Room! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, tempora voluptate minus omnis beatae corrupti odit voluptatem tenetur perferendis adipisci fuga. Deleniti incidunt perspiciatis optio beatae cumque ratione labore inventore quo, harum recusandae reiciendis odit quos odio sunt impedit quibusdam. Et atque facere officiis facilis ad earum minus illo provident! Please note that NO 12-year olds were made to Handmake this machine, no matter the rumours you may have heard." ,
+      "imgURL" : "../src/assets/images/pro-model.jpg"
+    }
+  ]
+}
