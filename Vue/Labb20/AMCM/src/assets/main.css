@@ -25,15 +25,16 @@
 }
 
 .button {
-  margin: 0.625em auto;
+  
   padding: 0.313em 0.625em;
   background-color: var(--button-color);
   color: var(--button-text-color);
-  width:  min-content;
+  width:  fit-content;
   border-bottom: 2px solid var(--deco-color);
-  border-radius: 20% / 50%;
+  border-radius: 2em / 3em;
   cursor: pointer;
-  text-align: center;
+  /* text-align: center; */
+  
   
 }
 p {

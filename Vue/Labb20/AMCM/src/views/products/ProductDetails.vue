@@ -1,58 +1,69 @@
 <template>
+   
     <div class="container">
-        <div class="left">
-            <!-- <img class="productImage" :src=productStore.deetProd.imgURL  width="300" height="500" alt="product pic"> -->
-            <img class="productImage2" :src=productStore.deetProd.imgURL  alt="product pic">
-        </div>
-        <div class="right">
-            <h2>{{productStore.deetProd.name}}</h2>
-            <p class="longDesc">{{ productStore.deetProd.longDesc }}</p>
-            <p class="button button2" @click="handleClick()">Details</p>
-        </div>
        
+        <div class="wrapper">
+           
+            <div class="left">
+                <img class="productImage2" :src=productStore.deetProd[0].imgURL  alt="product pic">
+            </div>
+            <div class="right">
+                <h2>{{productStore.deetProd[0].name}}</h2>
+                <p class="longDesc">{{ productStore.deetProd[0].longDesc }}</p>
+                <p><strong>Price: </strong>{{ productStore.deetProd[0].price }}&euro;</p>
+                <a class="button button2" @click="handleClick()">Buy this beautiful machine</a>
+            </div>
+        
+        </div>
         
     </div>
+    
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
+// import { RouterLink } from 'vue-router'
 import { useProductStore } from '../../stores/ProductStore'
-
-
+import { useRoute } from 'vue-router'
+// import { ref, onMounted } from 'vue'
+    const route = useRoute() 
+    const id = route.params.id
+    
     const productStore = useProductStore()
-    // const props = defineProps(['id'])
-    // console.log(id)
+    productStore.getDeetProduct(id)
+
+    console.log(productStore.deetProd)
+    
 </script>
 
 <style >
 .container{
      display: flex;
-     justify-content: space-evenly;
-
+     flex-direction: row;
+    justify-content: center;
+}
+.wrapper{
+    display: flex;
+   
+    
 }
 
 .left{
-    width: 45vw ;
-    margin: 2em 0.625em; 
-    display: flex;
-    flex-direction: column;
+    
+    margin: 2em auto 0 auto; 
     
 }
 
 .right{
-    width: 45vw;
-    margin: 2em auto;
+    
     padding: 3em;
     display: flex;
     flex-direction: column;
-    justify-content: left;
 
 }
 
 .productImage2{
-    margin: 0 auto;
-    width: 40vw;
     
+    width: 40vw;
     border-radius: 3rem;
 }
 
@@ -64,30 +75,34 @@ h2 {
    max-width: 40vw;
 }
 .button2{
-    text-align: left;
-    justify-self: left;
+    
+    text-align: center;
+    margin-top: 1em;
 }
 
 @media screen and (max-width:600px){
 
-.container{
+.wrapper{
+    
     flex-direction: column;  
-    justify-content: center;
+    align-items: center;
+    
 }
 .productImage2{
-    margin: 0 ;
-    width: 40vw;
+    margin: 0 auto;
+    width: 50vw;
+    border-radius: 2rem;
     
-    border-radius: 1rem;
 }
 
 .right{
-    width: 100vw;
+    padding-top: 1em;
     
 }
 .left{
-    width: 100vw;
-    
+  
+    display: flex;
+    flex-direction: column;
 }
 
 }

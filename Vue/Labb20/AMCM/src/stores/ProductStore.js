@@ -15,6 +15,14 @@ export const useProductStore = defineStore('productStore', {
 
             this.products = data
            
+        },
+        async getDeetProduct(id){
+            
+            const res = await fetch('http://localhost:3000/products?id=' + id)
+            const data = await res.json()
+
+            this.deetProd = data
+            
         }
     }
 })

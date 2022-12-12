@@ -5,9 +5,8 @@
                 <img class="productImage" :src=product.imgURL alt="product pic">
                 <h3>{{product.name}}</h3>
                 <p class="shortDesc">{{ product.shortDesc }}</p>
-                <p class="button " @click="handleClick(product)">Details</p>
-                <!-- <p class="button " @click="handleClick"><RouterLink :to="{ name: 'productDetails'}">Details</RouterLink></p> -->
-            </div>
+                <p class="button " @click="handleClick"><RouterLink :to="{name: 'productDetails', params:{ id: product.id}}">Details</RouterLink></p>
+            </div> 
         </div>  
    
 </template>
@@ -18,15 +17,7 @@ import  router  from '@/router'
 import { ref } from 'vue'
 import { useProductStore } from '../stores/ProductStore'
 
-    const props = defineProps(['product'])
-
-    const productStore = useProductStore()
-
-    function handleClick(product){
-        productStore.deetProd = product
-        router.push({ name: 'productDetails'})
-
-    }
+    const props = defineProps(['product'])   
     
 </script>
 
@@ -58,6 +49,10 @@ a {
     text-decoration: none;
     color: white;
 
+}
+
+.button{
+    margin: 0.625em auto;
 }
 @media screen and (max-width:600px){
 
