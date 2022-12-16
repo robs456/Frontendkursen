@@ -11,7 +11,7 @@
                 <h2>{{productStore.deetProd[0].name}}</h2>
                 <p class="longDesc">{{ productStore.deetProd[0].longDesc }}</p>
                 <p><strong>Price: </strong>{{ productStore.deetProd[0].price }}&euro;</p>
-                <a class="button button2" @click="handleClick()">Buy this beautiful machine</a>
+                <a class="button button2" @click="cartStore.addToCart(productStore.deetProd[0].id)">Buy this beautiful machine</a>
             </div>
         
         </div>
@@ -23,6 +23,7 @@
 <script setup>
 // import { RouterLink } from 'vue-router'
 import { useProductStore } from '../../stores/ProductStore'
+import { useCartStore } from '../../stores/CartStore'
 import { useRoute } from 'vue-router'
 // import { ref, onMounted } from 'vue'
     const route = useRoute() 
@@ -30,8 +31,7 @@ import { useRoute } from 'vue-router'
     
     const productStore = useProductStore()
     productStore.getDeetProduct(id)
-
-    console.log(productStore.deetProd)
+    const cartStore = useCartStore()    
     
 </script>
 

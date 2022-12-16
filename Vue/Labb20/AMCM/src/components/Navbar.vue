@@ -8,6 +8,10 @@
             <RouterLink to="/">Home</RouterLink>
             <RouterLink to="/Products">Products</RouterLink>
             <RouterLink to="/Cart"><i class="uil uil-shopping-cart"></i></RouterLink>
+            <div class="cartInd" v-if="cartStore.cartCount > 0">
+              <a>({{ cartStore.cartCount }})</a>
+
+            </div>
         </nav>
     </div>
     <div class="divider"></div>
@@ -20,6 +24,10 @@
 
 <script setup>
     import { RouterLink, RouterView } from 'vue-router'
+    import { useCartStore } from '../stores/CartStore'
+    const cartStore = useCartStore()
+
+    
 
 </script>
 
@@ -35,12 +43,7 @@ header {
 .logo{
     margin-left: 2rem;
 }
-.logotype {
-    color: var(--logo-color);
-    font-size: 2em;
-    font-weight: bold;
-    font-family: 'Dancing Script', cursive;
-}
+
 .top {
     display: flex;
     justify-content: space-between;
@@ -77,8 +80,12 @@ nav a.router-link-exact-active:hover {
 }
 
 nav a {
-  display: inline-block;
+  display: inline;
+  
   padding: 0 1rem;
+}
+.cartInd p {
+
 }
 
 

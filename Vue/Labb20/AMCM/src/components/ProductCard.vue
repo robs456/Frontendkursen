@@ -5,17 +5,22 @@
                 <img class="productImage" :src=product.imgURL alt="product pic">
                 <h3>{{product.name}}</h3>
                 <p class="shortDesc">{{ product.shortDesc }}</p>
-                <p class="button " @click="handleClick"><RouterLink :to="{name: 'productDetails', params:{ id: product.id}}">Details</RouterLink></p>
-            </div> 
+                <p class="price">Price: {{ product.price }}&euro;</p>
+                <div class="buttons">
+                    <p class="button " ><RouterLink :to="{name: 'productDetails', params:{ id: product.id}}">Details</RouterLink></p>
+                    <a class="button button2" @click="cartStore.addToCart(product.id)">Buy Now</a>
+                </div> 
+                    
+                </div>
         </div>  
    
 </template>
 
 <script setup>
 import { RouterLink } from 'vue-router'
-import  router  from '@/router'
-import { ref } from 'vue'
-import { useProductStore } from '../stores/ProductStore'
+
+import { useCartStore } from '../stores/CartStore'
+    const cartStore = useCartStore()
 
     const props = defineProps(['product'])   
     
@@ -49,6 +54,13 @@ a {
     text-decoration: none;
     color: white;
 
+}
+.price{
+    font-weight: bold;
+    margin-top: .325em;
+}
+.buttons{
+    display: flex;
 }
 
 .button{

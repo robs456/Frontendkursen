@@ -1,74 +1,46 @@
 import { defineStore} from 'pinia'
+import { ref, computed } from 'vue'
 
-export const useTaskStore = defineStore('taskStore', {
-    state: () => ({
-        tasks: [
-            // {id: 1, title: "buy some milk", isFav: false},
-            // {id: 2, title: "play Gloomhaven", isFav:  true}
-        ], 
-        loading: false
-        
-    }),
-    getters: {
-        favs() {
-            return this.tasks.filter(t => t.isFav)
-        },
-        favCount() {
-            return this.tasks.reduce((p,c) => {
-                return c.isFav ? p + 1 : p
-            }, 0)
-        },
-        totalCount: (state) => {
-            return state.tasks.length
+export const useCartStore = defineStore('cartycart', ()=>{
+    const cartCount = ref(0)
+    const cart = ref([])
+    const cartProducts = ref([])
+   
+    function addToCart(prodId){
+        cartCount.value++
+        const addData = { id: prodId, quantity : 1 }
+        if (cart.value.find(prod => prod.id === addData.id ?  prod.quantity++ : null)) {
+           
+        } else {
+            cart.value.push(addData)
         }
-    },
-    actions: {
-        async getTasks(){
-            this.loading = true
-            const res = await fetch('http://localhost:3000/tasks')
+        
+    }
+    function loadCart(){
+               
+        cart.value.forEach(async (item) => {
+            
+            const res = await fetch('http://localhost:3000/products?id=' + item.id)
             const data = await res.json()
 
-            this.tasks = data
-            this.loading = false
-        },
-        async addTask(task){
-            this.tasks.push(task)
-
-            const res = await fetch('http://localhost:3000/tasks', {
-                method: 'POST',
-                body: JSON.stringify(task),
-                headers: {'Content-type': 'application/json'}
-            })
-                if(res.error){
-                    console.log(res.error)
-                }
-        },
-
-        async deleteTask(id) {
-           this.tasks = this.tasks.filter(t => {
-            return t.id !== id
-           })
-
-           const res = await fetch('http://localhost:3000/tasks/' + id, {
-                method: 'DELETE',
+            const addProd = { name : data[0].name, price : data[0].price, quantity : item.quantity, id : item.id }
+            cartProducts.value.push(addProd)
+            
+        })
                 
-            })
-                if(res.error){
-                    console.log(res.error)
-                }
-        },
-        async toggleFav(id){
-            const task = this.tasks.find(t => t.id === id)
-            task.isFav = !task.isFav
-
-            const res = await fetch('http://localhost:3000/tasks/' + id, {
-                method: 'PATCH',
-                body: JSON.stringify({isFav: task.isFav}),
-                headers: {'Content-type': 'application/json'}
-            })
-                if(res.error){
-                    console.log(res.error)
-                }
-        }
+                
+              
     }
+
+    
+    function remFromCart(prodId){
+        cartCount.value--
+        
+        cart.value.find(prod => prod.id === prodId ?  prod.quantity-- : null)
+        console.log(cart.value[0])
+    }
+
+   
+    return { cartCount, addToCart, cart, cartCount, loadCart, cartProducts, remFromCart }
+    
 })

@@ -47,4 +47,10 @@ a {
   color: white;
 
 }
+.logotype {
+  color: var(--logo-color);
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Dancing Script', cursive;
+}
 
