@@ -6,16 +6,34 @@ export const useCartStore = defineStore('cartycart', ()=>{
     const cart = ref([])
     const cartProducts = ref([])
    
-    function addToCart(prodId){
-        cartCount.value++
-        const addData = { id: prodId, quantity : 1 }
-        if (cart.value.find(prod => prod.id === addData.id ?  prod.quantity++ : null)) {
+    // function addToCart(prodId){
+    //     cartCount.value++
+    //     const addData = { id: prodId, quantity : 1 }
+
+    //     // Testing Ternary madness! And it works!!!
+    //     if (cart.value.find(prod => prod.id === addData.id ?  ++prod.quantity : false)) {
            
+    //     } else {
+    //         cart.value.push(addData)
+           
+    //     }
+        
+    // }
+        // The Vanilla and utterly boring version
+    function addToCart(prodId){
+        ++cartCount.value
+        const addData = { id: prodId, quantity : 1 }
+        const prod = cart.value.find(prod => prod.id === addData.id)
+       
+        if (prod) {
+            prod.quantity++
         } else {
             cart.value.push(addData)
+          
         }
         
     }
+
     function loadCart(){
                
         cart.value.forEach(async (item) => {
@@ -32,12 +50,23 @@ export const useCartStore = defineStore('cartycart', ()=>{
               
     }
 
-    
-    function remFromCart(prodId){
-        cartCount.value--
+    // // Ternary version
+    // function remFromCart(prodId){
+    //     --cartCount.value
         
-        cart.value.find(prod => prod.id === prodId ?  prod.quantity-- : null)
-        console.log(cart.value[0])
+    //     cart.value.find(prod => prod.id === prodId ?  --prod.quantity : null)
+    //     console.log(cart.value[0])
+    // }
+
+    // Vanilla version
+    function remFromCart(prodId){
+        --cartCount.value
+        const prod = cart.value.find(prod => prod.id === prodId)
+        if (prod) {
+            --prod.quantity
+
+        } 
+       
     }
 
    

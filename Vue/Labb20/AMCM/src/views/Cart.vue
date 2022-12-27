@@ -10,7 +10,7 @@
         <div class="table" v-for="cartItem in cartStore.cartProducts" :key="cartItem.id">
              <p class="pcart item">{{cartItem.name}}</p> 
             <div class="qdiv">
-                <button class="qbutt" @click="decrement(cartItem.id)">-</button>
+                <button class="qbutt" @click="decrement(cartItem.id, cartItem.quantity)">-</button>
                 <p class="pcart quantity">{{cartItem.quantity}}</p>
                 <button class="qbutt" @click="increment(cartItem.id)">+</button>
             </div>
@@ -31,11 +31,13 @@ import { onMounted, onBeforeMount, onUnmounted , ref } from 'vue';
     const cartStore = useCartStore()
     const productStore = useProductStore()
 
-    function decrement (updId) {
-        if (cartStore.cartCount > 0 ){
+    function decrement (updId,itemQuant) {
+       
+        if (itemQuant > 0 ){
         cartStore.remFromCart(updId)
         cartStore.cartProducts = []
         cartStore.loadCart()
+        
         }
     }
     function increment (updId) {
