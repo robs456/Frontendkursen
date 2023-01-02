@@ -1,33 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 :root{
-  
+  width: 80%;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 * {
   padding: 0;
-  /* margin: 0 auto; */
+  margin: 0 auto;
   box-sizing: border-box;
 
 }
 
 .navbar{
   color: #555;
-  width: 80vw;
-  /* margin: 0 auto; */
+  
   margin-top: 1rem;
-  margin-inline: auto;
- 
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .navbar h1{
   font-family: 'Dancing Script', cursive;
   font-size: xx-large;
-  
 }
 
 .navbar button{
@@ -35,7 +30,6 @@
   padding: .5rem .625rem;
   border-radius: .5rem;
   font-size: medium;
-  margin: 0 ;  
 }
 
 .navbar p{
@@ -45,53 +39,42 @@
 
 .book{
   margin-top: 1rem;
-  /* display: grid;
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-template-areas: 
    "header"
-   "main"; */
+   "main";
 
   border-bottom: 1px solid #ddd;
   padding-bottom: 0.5rem;
-  text-align: left;
-
   
 }
 
 .booklist{
-  /* text-align: center; */
-  margin-top: 2rem;
-  margin-inline: auto;
-  width: 80vw;
-}
-
-.booklist h1{
   text-align: center;
+  margin-top: 2rem;
+  
 }
-
-  .bookHeader{
+.bookHeader{
   grid-area: header;
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   align-items: center;
-  /* margin: 0; */
-  /* width: 80vw; */
-  
+  margin: 0;
 }
 
 .info{
  display: flex;
- margin-left: auto;
 }
 
 .info p{
   margin-left: 1rem;
-  
 }
 
 article{
   grid-area: main;
+ 
 }
 
 .bookDark{
