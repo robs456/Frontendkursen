@@ -1,0 +1,129 @@
+@import url("https://unicons.iconscout.com/release/v4.0.0/css/line.css");
+
+:root{
+  
+  background-color: #d5d5d5;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+* {
+  padding: 0;
+  margin: 0; 
+  box-sizing: border-box;
+}
+
+.uil {
+
+  color: red;
+  
+} 
+
+.container {
+  width: 80vw;
+  margin: 2rem auto;
+  max-width: 1000px;
+  background-color: wheat;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 6px #00000035;
+}
+
+.header {
+  text-align: center;
+  border-bottom: 1px solid #888;
+  padding: 1rem 0rem;
+  /* position: relative; */
+}
+
+.buttons{
+display:  flex;
+justify-content: space-between;
+}
+
+.buttons button{
+border: none;
+background-color: green;
+padding: 0.5rem .625rem;
+border-radius: 0.5rem ;
+color: antiquewhite;
+box-shadow: 2px 2px 6px #959595;
+cursor: pointer;
+}
+.buttons .deleteAll{
+  
+  background-color: red;
+}
+
+
+
+.todoItem {
+  margin-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #888;
+  cursor: pointer;
+}
+
+.itemText { 
+font-size: large;
+font-weight: 500;
+}
+
+.completed{
+  text-decoration: line-through;
+}
+
+.icons {
+display: flex;
+}
+.modalButton{
+  border: none;
+background-color: gray;
+padding: 0.5rem .625rem;
+border-radius: 0.5rem ;
+color: antiquewhite;
+box-shadow: 2px 2px 6px #959595;
+cursor: pointer;
+}
+
+.submit{
+ background-color: darkgreen;
+}
+
+.cancel{
+margin-left: 2rem;
+
+}
+
+.modalContainer{
+  top: 0;
+  position: fixed;
+  background: rgba(0,0,0,0.5);
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal{
+    width: 40vw;
+    padding: 20px;
+    margin: 200px auto;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modalTitle{
+  /* border-bottom: 1px solid #888; */
+  padding-bottom: 0.625em;
+}
+.editInput{
+  width: 30vw;
+  margin-bottom: 1em;
+  height: 1.7em;
+}
+
+.modalButtons{
+ display: flex;
+ justify-content: center;
+}
