@@ -1,13 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-export const EditModal = ({todoToEdit, setShowEditModal}) => {
+export const EditModal = ({todoToEdit, setShowEditModal, changeTodo}) => {
 
-    // console.log(todoToEdit)
-    // // let {title,  id} = todoToEdit
-    // console.log(todoToEdit.title)
-    // console.log(todoToEdit.id)
-    // // todoToEdit.title = 'try harder'
-    // console.log(todoToEdit.title)
+    const [newTitle, setNewTitle] = useState(todoToEdit.current.title)
+
   return (
     <div className="modalContainer">
         <div className="modal">
@@ -15,11 +11,11 @@ export const EditModal = ({todoToEdit, setShowEditModal}) => {
                 <h3 className="modalTitle">Please edit your Todo:</h3>
             </header>
             <div className="modalBody">
-                <input type="text" name="editInput" className="editInput" placeholder='Todo'/>
+                <input type="text" name="editInput" className="editInput" value={newTitle} onChange={e => setNewTitle(e.target.value)}/>
                 
 
                 <div className="modalButtons">
-                    {/* <button className="submit modalButton" onClick={() => changeTodo(id, title)}>Submit</button> */}
+                    <button className="submit modalButton" onClick={() => changeTodo(newTitle, todoToEdit.current.id)}>Submit</button>
                     <button className="cancel modalButton" onClick={() => setShowEditModal(false)}>Cancel</button> 
                 </div>
 

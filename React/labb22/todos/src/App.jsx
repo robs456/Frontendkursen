@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 import Header from './Components/Header'
 import TodoList from './Components/TodoList'
@@ -19,7 +19,7 @@ function App() {
   const [showEditModal, setShowEditModal] = useState(false)
   const [showAddModal, setShowAddModal] = useState(false)
   const [showNukeModal, setShowNukeModal] = useState(false)
-  const [todoToEdit, setTodoToEdit] = useState()
+  const todoToEdit = useRef({})
 
 
   const completedToggle = (id) => {
@@ -39,17 +39,27 @@ function App() {
     setTodos(prevState => {
       return [...prevState, { id: crypto.randomUUID(), completed: false, title: item }]
     })
-  
+
+    setShowAddModal(false)
   }
   const editItem = (todo) =>{
-    console.log(todo.id)
-    setTodoToEdit(todo)
-    // const todo1=todo
-    // // setTodoToEdit(todo)
-    console.log(todoToEdit)
-    // console.log(todo1)
+    
+    
+    todoToEdit.current = todo
+    
+   
     setShowEditModal(true)   
   }
+
+  const changeTodo = (newTitle, id) => {
+    
+    setTodos(prevState => {
+      return prevState.map(todo => todo.id === id ? {...todo, title: newTitle } : todo)})
+    
+      setShowEditModal(false)  
+    
+  } 
+
   const deleteItem = (id) => {
     
     setTodos(prevState => {
@@ -64,7 +74,7 @@ function App() {
         editItem={editItem} 
         deleteItem={deleteItem}/>
       </div>
-      {showEditModal && <EditModal setShowEditModal={setShowEditModal} todoToEdit={todoToEdit}/>}
+      {showEditModal && <EditModal setShowEditModal={setShowEditModal} todoToEdit={todoToEdit} changeTodo={changeTodo} />}
       {showNukeModal && <NukeModal setShowNukeModal={setShowNukeModal} deleteList={deleteList}/>}
       {showAddModal && <AddModal setShowAddModal={setShowAddModal} addItem={addItem}/>}
     </div>
