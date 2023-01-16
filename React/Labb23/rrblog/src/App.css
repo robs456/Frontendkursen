@@ -1,0 +1,106 @@
+:root {
+  max-width: 1280px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* Colors */
+
+  --main-background: teal;
+  --secondary-background: white;
+  --text-color: rgb(116, 116, 116);
+  --button-color: darkgray;
+  --border-color: darkgray;
+  --hover-color: teal;
+ 
+
+  
+}
+
+
+body{
+  
+  /* Text color */
+
+  color: var(--text-color);
+
+  /* BG color */
+  background: var(--main-background);
+
+  /* Because something interferes with margins */
+  margin: 0;
+  padding: 0;
+
+  /* Font */
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.navContainer{
+  width: 100vw;
+  background-color: var(--secondary-background);
+  border-bottom: 3px solid var(--border-color);
+}
+
+.navbar{
+  width: 80vw;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  
+}
+
+.navlist{
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.listItem{
+  margin-left: 1rem;
+  font-size: larger;
+}
+
+a, :visited{
+  text-decoration: none;
+  color: var(--text-color)
+}
+
+a:hover{
+  color: var(--hover-color);
+}
+
+.blogItem{
+  background-color: var(--secondary-background);
+  margin: 1rem auto;
+  width: 80vw;
+  padding: 2px 5px;
+  border-radius: .5rem;
+}
+
+.blogHeader{
+  margin: .5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.blogTitle{
+  margin: 0;
+}
+
+.blogBody{
+  margin: .5rem;
+}
+
+.formContainer{
+  background-color: var(--secondary-background);
+  margin: 1rem auto;
+  width: 80vw;
+  padding: 2px 5px;
+  border-radius: .5rem;
+}
