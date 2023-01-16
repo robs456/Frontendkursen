@@ -3,8 +3,8 @@ import './App.css'
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import RootLayout from './Layouts/RootLayout'
 import Blogs from './Views/Blogs'
-import BlogDetails from './Views/Blogs'
-import CreateBlog from './Views/CreateBlog'
+import BlogDetails from './Views/BlogDetails'
+import CreateBlog, {handleFormSubmit} from './Views/CreateBlog'
 
 const loadBlogs = async () => {
   const res = await fetch('http://localhost:3000/blogs')
@@ -33,18 +33,19 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        path: "",
+        path: "/",
         element: <Blogs />,
         loader: loadBlogs
       },
       {
-        path: "blog/:id",
+        path: ":id",
         element: <BlogDetails />,
         loader: loadDetails
       },
       {
         path: "/create",
-        element: <CreateBlog />
+        element: <CreateBlog />,
+        action: handleFormSubmit
       }
     ]
   

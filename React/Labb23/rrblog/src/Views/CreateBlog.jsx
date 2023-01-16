@@ -1,43 +1,61 @@
 import React from 'react'
+import { Form, redirect } from 'react-router-dom'
 
 export default function CreateBlog() {
   return (
     <div className="formContainer">
           
-      {/* <div className="create">
-              <h2>Add a new Blog</h2>
-              <form onSubmit={handleSubmit}>
+      <div className="create">
+              <h2>Add a new Blog post</h2>
+              <Form method='post' action="/create">
                 <label >Blog title:</label>
                 <input
                 type="text"
                 required
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                
+                name='title'
                 />
-                  <label >Blog body:</label>
+
+                <label >Blog body:</label>
                 <textarea 
                 required
-                value={body}
-                onChange={(e) => setBody(e.target.value)}
+                name='body'
                 >
                 
                 </textarea>
                 <label >Blog author:</label>
                 <select 
-                value={author}
-                onChange={(e) => setAuthor(e.target.value)}
+                name='author'
                 >
-                  <option value="mario">Mario</option>
-                  <option value="yoshi">Yoshi</option>
+                  <option value="Mario">Mario</option>
+                  <option value="Yoshi">Yoshi</option>
                 </select>
-                { !isLoading && <button>Add Blog</button>}
-                { isLoading && <button disabled>Adding Blog...</button>}
-                {/* <p>{title}</p> */}
+                
+                <button className='submitButton' type='submit'>Create post</button>
 
-              {/* </form>
-          </div> */} 
+                </Form>
+          </div> 
 
     </div>
   )
 }
+
+export const handleFormSubmit = async ({request}) => {
+
+  const subData = await request.formData()
+  
+  const sendData = {
+    title: subData.get('title'),
+    body: subData.get('body'),
+    author: subData.get('author'),
+    id: crypto.randomUUID()
+  }
+   
+   fetch('http://localhost:3000/blogs', {
+    method:'POST',
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(sendData)
+  })
+  return redirect('/')
+}
+
+ 

@@ -10,7 +10,7 @@ export default function Blogs() {
 
     blogs.map( blogitem =>  (
 
-    <Link to={"/blog/" + blogitem.id} key={blogitem.id}>
+    <Link to={"/" + blogitem.id} key={blogitem.id}>
     <div className="blogItem">
       <header className="blogHeader">
         <h2 className="blogTitle">{blogitem.title}</h2>
