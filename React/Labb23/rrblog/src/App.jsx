@@ -5,6 +5,7 @@ import RootLayout from './Layouts/RootLayout'
 import Blogs from './Views/Blogs'
 import BlogDetails from './Views/BlogDetails'
 import CreateBlog, {handleFormSubmit} from './Views/CreateBlog'
+import { ErrorPage } from './Views/ErrorPage'
 
 const loadBlogs = async () => {
   const res = await fetch('http://localhost:3000/blogs')
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

@@ -55,7 +55,9 @@ export const handleFormSubmit = async ({request}) => {
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(sendData)
   })
+  
   return redirect('/')
+   
 }
 
  
